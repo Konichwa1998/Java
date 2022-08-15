@@ -54,7 +54,7 @@ public class SqlRepository implements Repository {
     
     private static final String ADMIN_LOGIN = "{ CALL AdminLogin}";
     
-    private static final String CREATE_ACTOR = "{ CALL createMovie (?,?,?) }";
+    private static final String CREATE_ACTOR = "{ CALL createActor (?,?,?) }";
     private static final String SELECT_ACTORS = "{ CALL selectActors }";
     private static final String SELECT_ACTOR = "{ CALL selectActor (?) }";
     private static final String DELETE_ACTOR = "{ CALL deleteActor (?) }";
@@ -189,6 +189,12 @@ public class SqlRepository implements Repository {
                 stmt.registerOutParameter("@" + ID, Types.INTEGER);
 
                 stmt.executeUpdate();
+                int movieID = stmt.getInt("@" + ID);
+                
+                for (Actor actor : movie.getActors()) {
+                    int actorID = createActor(actor);
+                    ActorToMovie(movieID, actorID);
+                }
             }
         }
     }
@@ -219,7 +225,7 @@ public class SqlRepository implements Repository {
         DataSource dataSource = DataSourceSingleton.getInstance();
         try (Connection con = dataSource.getConnection();
             CallableStatement stmt = con.prepareCall(CREATE_ACTOR)) {
-
+            String ime = actor.getName();
             stmt.setString("@" + IME, actor.getName());
             stmt.setString("@" + PREZIME, actor.getSurname());
    

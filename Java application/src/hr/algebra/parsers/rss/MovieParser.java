@@ -67,7 +67,6 @@ public class MovieParser {
         HttpURLConnection con = UrlConnectionFactory.getHttpUrlConnection(RSS_URL);
         try (InputStream is = con.getInputStream()) {
             XMLEventReader reader = ParserFactory.createStaxParser(is);
-            ParseActors("Klara Hrvanović, Olga Odanović, Snježana Sinovčić, Žarko Laušević");
             Optional<TagType> tagType = Optional.empty();
             Movie movie = null;
             StartElement startElement = null;
@@ -109,9 +108,9 @@ public class MovieParser {
                                 }
                                 break;
                                 case GLUMCI:
-                                if (!data.isEmpty()) {
+                                
+                                    movie.setActors(ParseActors(data));
                                     movie.setActor(data);
-                                }
                                 break;
                                 case PLAKAT:
                                 // bugfix -> prevent to enter 2 times!!!

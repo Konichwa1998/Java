@@ -5,6 +5,8 @@
  */
 package hr.algebra.model;
 
+import java.util.List;
+
 /**
  *
  * @author Korsnik
@@ -18,6 +20,7 @@ public class Movie {
     private String actor;
     private String director;
     private String picturePath;
+    private List<Actor> actors;
 
     public Movie() {
     }
@@ -41,6 +44,14 @@ public class Movie {
         this.actor = actor;
         this.director = director;
         this.picturePath = picturePath;
+    }
+
+    public List<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(List<Actor> actors) {
+        this.actors = actors;
     }
     
     
