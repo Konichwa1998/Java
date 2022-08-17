@@ -9,6 +9,7 @@ import hr.algebra.dal.Repository;
 import hr.algebra.dal.RepositoryFactory;
 import hr.algebra.model.Movie;
 import hr.algebra.parsers.rss.MovieParser;
+import hr.algebra.utils.FileUtils;
 import hr.algebra.utils.MessageUtils;
 import java.util.List;
 import java.util.Optional;
@@ -117,6 +118,7 @@ public class UploadMoviesPanel extends javax.swing.JPanel {
         try {
             repository.deleteMovies();
             lsMovies.setListData(new Movie[0]);
+            FileUtils.DeletePictures();
         } catch (Exception ex) {
             Logger.getLogger(UploadMoviesPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
