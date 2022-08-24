@@ -10,9 +10,6 @@ import hr.algebra.view.DragDropDirectors;
 import hr.algebra.view.EditActorsPanel;
 import hr.algebra.view.EditDirectorsPanel;
 import hr.algebra.view.EditMoviePanel;
-import hr.algebra.view.UploadMoviesPanel;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *

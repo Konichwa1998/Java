@@ -5,11 +5,8 @@
  */
 package hr.algebra.view;
 
-import com.sun.org.apache.xerces.internal.impl.XMLScanner;
 import hr.algebra.AdminForm;
 import hr.algebra.LoginForm;
-import hr.algebra.MainWindow;
-import hr.algebra.dal.Repository;
 import hr.algebra.dal.sql.DataSourceSingleton;
 import hr.algebra.utils.MessageUtils;
 import java.sql.PreparedStatement;

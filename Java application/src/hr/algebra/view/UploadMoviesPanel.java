@@ -12,7 +12,6 @@ import hr.algebra.parsers.rss.MovieParser;
 import hr.algebra.utils.FileUtils;
 import hr.algebra.utils.MessageUtils;
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;

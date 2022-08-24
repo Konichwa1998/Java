@@ -5,7 +5,6 @@
  */
 package hr.algebra.vm;
 
-import hr.algebra.model.Actor;
 import hr.algebra.model.Director;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;

@@ -5,13 +5,9 @@
  */
 package hr.algebra;
 
-import hr.algebra.view.AdminLoginPanel;
-import hr.algebra.view.RegisterPanel;
 import hr.algebra.view.UploadMoviesPanel;
-import hr.algebra.view.UserLoginPanel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
 
 /**
  *

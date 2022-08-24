@@ -48,8 +48,8 @@ public class MovieParser {
         String[] parsedActor;
         parsedActor = poslaniString.split(",", -1);
         
-        for (int i = 0; i < parsedActor.length; i++) {
-            String[] singleActor = parsedActor[i].trim().split(" ", -1);
+        for (String parsedActor1 : parsedActor) {
+            String[] singleActor = parsedActor1.trim().split(" ", -1);
             Actor actor = new Actor(singleActor[0].trim(), singleActor[1].trim());
             actors.add(actor);
         }
